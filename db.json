@@ -1,0 +1,82 @@
+{
+  "popups": [
+    {
+      "id": "1",
+      "title": "popup 1",
+      "content": "test hover popup --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "28-09-2021",
+      "type": "hover",
+      "params": {
+        "value": null
+      },
+      "frequency": 7
+    },
+    {
+      "id": "2",
+      "title": "popup 2",
+      "content": "test click popup --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "28-09-2021",
+      "type": "click",
+      "params": {
+        "value": null
+      },
+      "frequency": 28
+    },
+    {
+      "id": "3",
+      "title": "popup 3",
+      "content": "test scroll popup 25% of page --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "12-08-2021",
+      "type": "scroll",
+      "params": {
+        "value": 25
+      },
+      "frequency": 7
+    },
+    {
+      "id": "4",
+      "title": "popup 4",
+      "content": "test exit-intent popup --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "01-04-2021",
+      "type": "exit-intent",
+      "params": {
+        "value": null
+      },
+      "frequency": 14,
+      "lastShown": "27-12-2021"
+    },
+    {
+      "id": "5",
+      "title": "popup 5",
+      "content": "test timer popup 1 minute --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "21-01-2021",
+      "type": "timer",
+      "params": {
+        "value": 1
+      },
+      "frequency": 21
+    },
+    {
+      "id": "6",
+      "title": "popup 6",
+      "content": "test mobile-exit-intent popup --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "15-02-2021",
+      "type": "mobile-exit-intent",
+      "params": {
+        "value": null
+      },
+      "frequency": 28
+    },
+    {
+      "id": "7",
+      "title": "popup 7",
+      "content": "test reload popup --- amet consectetur mollit incididunt non consectetur. Laborum ipsum consectetur enim sunt mollit officia irure est magna Lorem exercitation voluptate. Adipisicing nostrud sint dolore deserunt nulla consequat. Sunt eu ea pariatur culpa elit officia nisi. In pariatur amet do deserunt. Non exercitation labore adipisicing incididunt excepteur tempor et eiusmod excepteur ad fugiat ut eu.",
+      "createdAt": "28-09-2021",
+      "type": "reload",
+      "params": {
+        "value": null
+      },
+      "frequency": 14
+    }
+  ]
+}
