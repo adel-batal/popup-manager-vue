@@ -50,13 +50,13 @@ The available options for a popup configuration object are:
 ![Alt text](screenshots/popup-manager.png?raw=true "PopupManager")
 
 ###### Form views
-![Alt text](screenshots/add-popup-1.png?raw=true "Title")
+![Alt text](screenshots/add-popup-1.png?raw=true )
 
-![Alt text](screenshots/add-popup-2.png?raw=true "Title")
+![Alt text](screenshots/add-popup-2.png?raw=true )
 
-![Alt text](screenshots/add-popup-3.png?raw=true "Title")
+![Alt text](screenshots/add-popup-3.png?raw=true )
 
-![Alt text](screenshots//edit-popup.png.png?raw=true "Title")
+![Alt text](screenshots//edit-popup.png.png?raw=true )
 
 #### Notes
 - There are 7 intreis in the `db.json` file so you can immediately test
