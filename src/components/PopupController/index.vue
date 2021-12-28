@@ -1,11 +1,19 @@
 <template>
   <!-- teleported to an element that lives in public/index.html -->
   <teleport to="#popup-root">
-    <div >
-      <transition-group name="fade" v-for="popupIndex in activePopups" :key="popupIndex">
-        <slot :popup="popups[popupIndex]" :close="() => closePopup(popupIndex)">
-          <Popup :popup="popups[popupIndex]" @close="closePopup(popupIndex)" />
-        </slot>
+    <div>
+      <transition-group name="fade">
+        <div v-for="popupIndex in activePopups" :key="popupIndex">
+          <slot
+            :popup="popups[popupIndex]"
+            :close="() => closePopup(popupIndex)"
+          >
+            <Popup
+              :popup="popups[popupIndex]"
+              @close="closePopup(popupIndex)"
+            />
+          </slot>
+        </div>
       </transition-group>
     </div>
   </teleport>
