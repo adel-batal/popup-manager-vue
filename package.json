@@ -12,21 +12,20 @@
     "fake-backend": "json-server --watch db.json --port 5000",
     "build-lib": "vue-cli-service build --target lib src/components/index.js"
   },
-  "dependencies": {
-    "vue-router": "^4.0.12"
-  },
+  "dependencies": {},
   "peerDependencies": {
+    "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "json-server": "^0.17.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "json-server": "^0.17.0"
+    "eslint-plugin-vue": "^7.0.0"
   },
   "eslintConfig": {
     "root": true,

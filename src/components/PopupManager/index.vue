@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-<!--     <router-link to="/appTest">Click here to test your popups!!</router-link> -->
+    <router-link to="/appTest">Click here to test your popups!!</router-link>
     <div class="popup-manager">
       <div class="popup-manager_header">
         <PopupManagerHeader :title="title" :subtitle="subtitle" />
