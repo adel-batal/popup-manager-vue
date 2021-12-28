@@ -77,6 +77,17 @@
         "value": null
       },
       "frequency": 14
+    },
+    {
+      "title": "test",
+      "content": "test",
+      "createdAt": "28-12-2021",
+      "type": "exit-intent",
+      "params": {
+        "value": null
+      },
+      "frequency": "14",
+      "id": "u9Ts49X"
     }
   ]
 }

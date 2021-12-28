@@ -1,15 +1,13 @@
 <template>
   <!-- teleported to an element that lives in public/index.html -->
   <teleport to="#popup-root">
-    <transition
-      name="fade"
-      v-for="popupIndex in activePopups"
-      :key="popupIndex"
-    >
-      <slot :popup="popups[popupIndex]" :close="() => closePopup(popupIndex)">
-        <Popup :popup="popups[popupIndex]" @close="closePopup(popupIndex)" />
-      </slot>
-    </transition>
+    <div >
+      <transition-group name="fade" v-for="popupIndex in activePopups" :key="popupIndex">
+        <slot :popup="popups[popupIndex]" :close="() => closePopup(popupIndex)">
+          <Popup :popup="popups[popupIndex]" @close="closePopup(popupIndex)" />
+        </slot>
+      </transition-group>
+    </div>
   </teleport>
 </template>
 
@@ -54,7 +52,6 @@ export default {
         parseInt(localStorage.getItem(`__last-shown-popup-${popup.id}`)) || 0;
       const frequencyInMs = parseInt(popup.frequency) * 86400000; // converting days to milliseconds
       const timeDiff = nowInMs - popupLastShownInMs;
-      console.log(frequencyInMs, popupLastShownInMs, nowInMs);
       if (timeDiff > frequencyInMs) {
         localStorage.setItem(`__last-shown-popup-${popup.id}`, nowInMs);
         return true;

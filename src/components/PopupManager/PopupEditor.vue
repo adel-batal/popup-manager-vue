@@ -190,10 +190,7 @@ export default {
       ) {
         alert('Please fill all fields.');
         return false;
-      } else if (this.formValues.type && !this.formValues.params.value) {
-        alert('Please specify the value of trigger.');
-        return false;
-      }
+      } 
       return true;
     },
   },

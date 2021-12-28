@@ -25,7 +25,7 @@
     <br />
     <br />
     <a @mouseover="$refs.controller.showPopup(1)" href="#">Hover Test</a>
-    <br />
+    <br />d
     <br />
     <br />
     <router-link to="/">Go back to popup manager</router-link>
