@@ -83,11 +83,11 @@ export default {
         }
       });
     },
-    getScrollPercent(e) {
-      const scrollTop = e.target.scrollingElement.scrollTop;
-      const docHeight = e.target.scrollingElement.scrollHeight;
+    getScrollPercent() {
+      const scrollY = window.scrollY;
+      const docHeight = document.scrollingElement.scrollHeight;
       const winHeight = window.innerHeight;
-      const nextValue = scrollTop / (docHeight - winHeight);
+      const nextValue = scrollY / (docHeight - winHeight);
       return Math.round(nextValue * 100);
     },
 
@@ -98,14 +98,14 @@ export default {
         });
       }
     },
-    onTouchScreenExitIntent(e) {
+    onTouchScreenExitIntent() {
       const isTouchScreen =
         'ontouchstart' in window ||
         navigator.maxTouchPoints > 0 ||
         navigator.msMaxTouchPoints > 0;
       if (!isTouchScreen) return;
       else {
-        const nextValue = this.getScrollPercent(e);
+        const nextValue = this.getScrollPercent();
         setTimeout(() => {
           this.scrollPercentageBefore = nextValue;
         }, 100);
@@ -118,9 +118,9 @@ export default {
         }
       }
     },
-    onScroll(e) {
+    onScroll() {
       const prevValue = this.scrollPercentage;
-      const nextValue = this.getScrollPercent(e);
+      const nextValue = this.getScrollPercent();
       this.onScrollPopups.forEach((popupIndex) => {
         if (
           nextValue > prevValue &&
