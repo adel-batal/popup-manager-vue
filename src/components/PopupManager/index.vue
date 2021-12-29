@@ -18,9 +18,9 @@
         ></em>
       </div>
       <!-- Dynamic component introduces an issue when compenents need to get
-      multiple different attributes which is having to passthe following
+      multiple different attributes which is having to pass the following
       props to every component, even the components that do not need these
-      props. A straight forward solution could beremoving the dynamic component
+      props. A straight forward solution could be removing the dynamic component
       and having each component on its own since there are only two components. -->
       <!--
         Dynamic component implementation
@@ -97,7 +97,6 @@ export default {
       const popupToEdit = this.popups.find((popup) => popup.id === id);
       this.popupToEdit = popupToEdit;
       this.setActiveDisplay('PopupEditor');
-      console.log(id, popupToEdit);
     },
     // clearing when the edit form is unmounted to avoid collisions
     // this method is passed down as a function to the edit popup form

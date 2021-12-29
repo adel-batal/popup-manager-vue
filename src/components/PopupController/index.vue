@@ -43,16 +43,6 @@ export default {
     popups: Array,
   },
   methods: {
-    showPopup(index) {
-      if (this.allowShowPopup(index) && !this.activePopups.includes(index)) {
-        this.activePopups.push(index);
-      }
-    },
-    closePopup(index) {
-      this.activePopups = this.activePopups.filter(
-        (popupIndex) => popupIndex !== index
-      );
-    },
     allowShowPopup(index) {
       const popup = this.popups[index];
       const nowInMs = Date.now();
@@ -65,6 +55,16 @@ export default {
         return true;
       }
       return false;
+    },
+    showPopup(index) {
+      if (this.allowShowPopup(index) && !this.activePopups.includes(index)) {
+        this.activePopups.push(index);
+      }
+    },
+    closePopup(index) {
+      this.activePopups = this.activePopups.filter(
+        (popupIndex) => popupIndex !== index
+      );
     },
 
     allocatePopups() {
@@ -85,7 +85,14 @@ export default {
         }
       });
     },
-
+    getScrollValue(e) {
+      const scrollTop = e.target.scrollingElement.scrollTop;
+      const docHeight = e.target.scrollingElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const scrollPercent = scrollTop / (docHeight - winHeight);
+      const nextValue = Math.round(scrollPercent * 100);
+      return nextValue;
+    },
     onExitIntent(e) {
       if (!e.toElement) {
         this.onExitPopups.forEach((popupIndex) => {
@@ -93,6 +100,7 @@ export default {
         });
       }
     },
+
     onTouchScreenExitIntent(e) {
       const isTouchScreen =
         'ontouchstart' in window ||
@@ -113,14 +121,6 @@ export default {
         }
       }
     },
-    getScrollValue(e) {
-      const scrollTop = e.target.scrollingElement.scrollTop;
-      const docHeight = e.target.scrollingElement.scrollHeight;
-      const winHeight = window.innerHeight;
-      const scrollPercent = scrollTop / (docHeight - winHeight);
-      const nextValue = Math.round(scrollPercent * 100);
-      return nextValue;
-    },
     onScroll(e) {
       const prevValue = this.scrollPercentage;
       const nextValue = this.getScrollValue(e);
@@ -134,7 +134,6 @@ export default {
       });
       this.scrollPercentage = nextValue;
     },
-
     onTimer() {
       this.timedPopups.forEach((popupIndex) => {
         setTimeout(() => {
@@ -148,16 +147,16 @@ export default {
       });
     },
   },
-  emits: ['last-shown-edit'],
-  created() {
-    this.allocatePopups();
-  },
 
   watch: {
     popups() {
       this.allocatePopups();
     },
   },
+  created() {
+    this.allocatePopups();
+  },
+
   mounted() {
     this.onTimer();
     window.addEventListener('load', this.onReload);
@@ -165,7 +164,6 @@ export default {
     document.addEventListener('scroll', this.onTouchScreenExitIntent);
     document.addEventListener('mouseout', this.onExitIntent);
   },
-
   beforeUnmount() {
     window.removeEventListener('load', this.onReload);
     document.removeEventListener('scroll', this.onScroll);
