@@ -8,10 +8,7 @@
             :popup="popups[popupIndex]"
             :close="() => closePopup(popupIndex)"
           >
-            <Popup
-              :popup="popups[popupIndex]"
-              @close="closePopup(popupIndex)"
-            />
+            <Popup />
           </slot>
         </div>
       </transition-group>
@@ -56,6 +53,7 @@ export default {
       }
       return false;
     },
+
     showPopup(index) {
       if (this.allowShowPopup(index) && !this.activePopups.includes(index)) {
         this.activePopups.push(index);
@@ -92,6 +90,7 @@ export default {
       const nextValue = scrollTop / (docHeight - winHeight);
       return Math.round(nextValue * 100);
     },
+
     onExitIntent(e) {
       if (!e.toElement) {
         this.onExitPopups.forEach((popupIndex) => {
@@ -99,7 +98,6 @@ export default {
         });
       }
     },
-
     onTouchScreenExitIntent(e) {
       const isTouchScreen =
         'ontouchstart' in window ||

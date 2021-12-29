@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     async fetchPopups() {
-      const res = await fetch('api/popups'); // Check vue.config.js file in the root directory
+      const res = await fetch('api/popups'); // See vue.config.js file in the root directory
       return res.json();
     },
   },

@@ -64,12 +64,3 @@ export default {
   },
 };
 </script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: slategrey;
-}
-</style>

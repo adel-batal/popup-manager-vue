@@ -8,10 +8,16 @@ export default {
 };
 </script>
 
-<style >
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: slategrey;
 }
 </style>

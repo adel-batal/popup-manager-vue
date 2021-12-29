@@ -32,7 +32,6 @@ export default {
   props: {
     popups: Array,
   },
-  inheritAttrs: false,
 };
 </script>
 
