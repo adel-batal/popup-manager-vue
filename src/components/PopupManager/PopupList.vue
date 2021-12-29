@@ -27,7 +27,7 @@ export default {
         PopupEntry,
   },
   /* Prop drilling due to the absence of a state management library like VUEX, 
-  not a huge probelm on a small app like this one, however,
+  not a huge problemm on a small app like this one, however,
   a state management library is needed in case of scaling up. */
   props: {
     popups: Array,

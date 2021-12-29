@@ -138,7 +138,7 @@ export default {
       this.timedPopups.forEach((popupIndex) => {
         setTimeout(() => {
           this.showPopup(popupIndex);
-        }, this.popups[popupIndex].params.value);
+        }, this.popups[popupIndex].params.value * 60000); // minute to millisecond conversion
       });
     },
     onReload() {
@@ -158,17 +158,18 @@ export default {
   },
 
   mounted() {
-    this.onTimer();
     window.addEventListener('load', this.onReload);
-    document.addEventListener('scroll', this.onScroll);
-    document.addEventListener('scroll', this.onTouchScreenExitIntent);
-    document.addEventListener('mouseout', this.onExitIntent);
+    window.addEventListener('load', this.onTimer);
+    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', this.onTouchScreenExitIntent);
+    window.addEventListener('mouseout', this.onExitIntent);
   },
   beforeUnmount() {
     window.removeEventListener('load', this.onReload);
-    document.removeEventListener('scroll', this.onScroll);
-    document.removeEventListener('scroll', this.onTouchScreenExitIntent);
-    document.removeEventListener('mouseout', this.onExitIntent);
+    window.removeEventListener('load', this.onTimer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('scroll', this.onTouchScreenExitIntent);
+    window.removeEventListener('mouseout', this.onExitIntent);
   },
 };
 </script>
