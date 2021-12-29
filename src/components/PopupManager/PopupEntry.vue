@@ -2,16 +2,7 @@
   <div class="popup-entry">
     <span>{{ popup.title }}</span>
     <span>{{ popup.createdAt }}</span>
-    <span
-      >{{ popup.type }}
-      {{
-        popup.type === 'timer'
-          ? `: ${popup.params.value} min.`
-          : popup.type === 'scroll'
-          ? `: ${popup.params.value}%`
-          : ''
-      }}</span
-    >
+    <span>{{ popup.type + typeUnit }}</span>
     <span>{{ `${popup.frequency} days` }}</span>
     <span class="popup-entry_actions">
       <em
@@ -28,6 +19,15 @@ export default {
   name: 'PopupEntry',
   props: {
     popup: Object,
+  },
+  computed: {
+    typeUnit() {
+      if (this.popup.type === 'timer')
+        return `: ${this.popup.params.value} min.`;
+      else if (this.popup.type === 'scroll')
+        return `: ${this.popup.params.value}%`;
+      return '';
+    },
   },
   inject: ['setActiveDisplay', 'onDelete'],
   emits: ['popup-edit'],
