@@ -59,7 +59,7 @@ The available options for a popup configuration object are:
 ![Alt text](screenshots//edit-popup.png.png?raw=true )
 
 #### Notes
-- There are 7 intreis in the `db.json` file so you can immediately test
+- There are 7 entreis in the `db.json` file so you can immediately test
 - The Vue router library was added to the project for the convenience of the tester and only that
 
 ### Build lib
